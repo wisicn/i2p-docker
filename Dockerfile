@@ -1,6 +1,6 @@
 FROM debian:stretch
  
-ENV I2P_VERSION 0.9.37-1ubuntu1
+#ENV I2P_VERSION 0.9.37-1ubuntu1
 ENV I2P_DIR /usr/share/i2p
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG en_US.UTF-8
@@ -34,7 +34,7 @@ RUN echo "deb https://deb.i2p2.de/ stretch main" > /etc/apt/sources.list.d/i2p.l
 RUN apt-get -y update && \
     apt-get -y install \
 	  procps \
-	  i2p="${I2P_VERSION}" \
+	  i2p \
 	  i2p-keyring \
 	  locales \
 	&& \
