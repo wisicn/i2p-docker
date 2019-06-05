@@ -26,11 +26,12 @@ EXPOSE 2827 7650 7654 7655 7656 7657 7658 7659 7660 7661 7662 4444 6668 8998
 RUN apt-get -y update && \
     apt-get -y install \
 	  apt-transport-https \
+          curl \
 	  gnupg \
 	&& \
     apt-get clean
 RUN echo "deb https://deb.i2p2.de/ stretch main" > /etc/apt/sources.list.d/i2p.list && \
-    apt-key adv --no-tty --keyserver hkp://pgp.mit.edu --recv-key 0x67ECE5605BCF1346
+    curl -L https://geti2p.net/_static/i2p-debian-repo.key.asc | sudo apt-key add -
 RUN apt-get -y update && \
     apt-get -y install \
 	  procps \
