@@ -31,7 +31,7 @@ RUN apt-get -y update && \
 	&& \
     apt-get clean
 RUN echo "deb https://deb.i2p2.de/ stretch main" > /etc/apt/sources.list.d/i2p.list && \
-    curl -L https://geti2p.net/_static/i2p-debian-repo.key.asc | sudo apt-key add -
+    curl -L https://geti2p.net/_static/i2p-debian-repo.key.asc | apt-key add -
 RUN apt-get -y update && \
     apt-get -y install \
 	  procps \
