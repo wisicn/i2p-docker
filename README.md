@@ -18,3 +18,5 @@ If you use Fedora or other selinux enabled OS and get ```mkdir: cannot create di
 -v ~/.i2p:/var/lib/i2p:Z
 ```
 As described in the [docker documentation](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label), this should set the selinux labels correctly.
+
+If you want to run I2P webserver(eepsite) in the docker, you must edit the jetty configure file in the docker contain path /var/lib/i2p/i2p-config/eepsite/jetty.xml, Change 127.0.0.1 to 0.0.0.0 in the addListener sectio, and restart I2P router or go to the I2P router console [ConfigClients](http://localhost:7657/configclients) to restart ethe webserver only.
