@@ -2,9 +2,13 @@
 
 This is the Java I2P router in Docker. Forked from [hkparker/i2p-docker](https://github.com/hkparker/i2p-docker)
 
+# Dockerhub
+
+The link in Dockerhub is [wisicn/i2p-docker](https://hub.docker.com/r/wisicn/i2p-docker)
+
 ## Usage
 
-`docker run -v ~/.i2p:/var/lib/i2p -p 127.0.0.1:4444:4444 -p 127.0.0.1:7657:7657 wisicn/i2p`
+`docker run --name myi2p --restart unless-stopped -d -v ~/.i2p:/var/lib/i2p -p 127.0.0.1:4444:4444 -p 127.0.0.1:7657:7657 wisicn/i2p-docker`
 
 ### Common problems
 
